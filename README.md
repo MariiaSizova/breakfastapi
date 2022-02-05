@@ -26,7 +26,7 @@ The delicious meals are now only one GET request away from you.
 
 ```
 import requests
-r = requests.get(url='https://www.breakfastapi.fun/')
+r = requests.get(url='https://breakfastapi.fun/')
 data = r.json()
 ```
 
