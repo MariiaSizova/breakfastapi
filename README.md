@@ -14,7 +14,7 @@ The delicious meals are now only one GET request away from you.
 ---
 
 ### **Check it out!** 
-[![BreakFastApi](https://img.shields.io/badge/BreakFastApi-0077B5?style=for-the-badge&logo=fastapi&logoColor=white)](https://www.breakfastapi.fun)
+[![BreakFastApi](https://img.shields.io/badge/BreakFastApi-0077B5?style=for-the-badge&logo=fastapi&logoColor=white)](https://breakfastapi.fun/)
 
 
 ### **How does it work?**
