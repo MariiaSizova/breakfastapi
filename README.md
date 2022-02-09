@@ -26,7 +26,7 @@ The delicious meals are now only one GET request away from you.
 **Sample request:**
 
 
-```
+```python
 import requests
 r = requests.get(url='https://breakfastapi.fun/')
 data = r.json()
@@ -35,9 +35,9 @@ data = r.json()
 **Sample response:**
 
 
-```
+```python
 {
-    'ID':11574,
+    'ID': 11574,
     'Recipe Name': 'Devils Steak Sauce Recipe',
     'Cook Time (minutes)': 15,
     'Ingredients': ['brown sugar',
@@ -48,13 +48,13 @@ data = r.json()
                     'black pepper',
                     'vinegar'
                     ],
-    'Directions': 'In a saucepan over high heat, 
+    'Directions': '''In a saucepan over high heat, 
                    blend raspberry jam, brown sugar, 
                    Worcestershire sauce, tomato sauce, 
                    malt vinegar, hot pepper sauce, salt, 
                    and pepper. Bring to a boil over high heat, 
                    reduce heat to low, and simmer 10 minutes,
-                   or until thickened.'
+                   or until thickened.'''
 }
 ```
 
