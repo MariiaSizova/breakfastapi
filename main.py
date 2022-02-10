@@ -1,16 +1,14 @@
 import uvicorn
 from fastapi import FastAPI
 
-from db.database import Database
-from helpers.data_formating import jsonify_data
+from db.database import fetch_random_recipe
 
 app = FastAPI()
-db = Database()
 
 
 @app.get("/", status_code=200)
-def get_recipes() -> list:
-    return jsonify_data(db)
+def get_recipes() -> dict:
+    return {"status": 200, "recipe": fetch_random_recipe()}
 
 
 if __name__ == "__main__":
