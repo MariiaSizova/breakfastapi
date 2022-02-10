@@ -1,40 +1,27 @@
 import uvicorn
 from fastapi import FastAPI
-from pydantic import BaseModel
+from typing import Union
 
 from db.database import fetch_random_recipe, fetch_recipe_by_id
-
-
-class Recipe(BaseModel):
-    id: int
-    name: str
-    total_duration: int
-    ingredients: list
-    directions: str
-
-    class Config:
-        schema_extra = {
-            "example": {
-                "id": 5490,
-                "name": "Tongue and Mustard Sandwiches Recipe",
-                "total_duration": 150,
-                "ingredients": ["salt", "onion", "mustard", "bread", "beef"],
-                "directions": "Rinse beef tongue and place in a large pot. Cover with water and add the salt and chopped onion...",
-            }
-        }
+from models.recipe import Recipe, RecipeResponse
+from models.error import NotFoundResponse
 
 
 app = FastAPI()
 
 
-@app.get("/", status_code=200, response_model=Recipe)
+@app.get("/", response_model=RecipeResponse, responses={200: {"model": RecipeResponse}})
 def get_recipes() -> dict:
     recipe: Recipe = fetch_random_recipe()
-    return recipe
+    return {"status": 200, "recipe": recipe}
 
 
-@app.get("/{id}", status_code=200, response_model=Recipe)
-def get_recipe_by_id(id) -> dict:
+@app.get(
+    "/{id}",
+    response_model=Union[RecipeResponse, NotFoundResponse],
+    responses={200: {"model": RecipeResponse}, 404: {"model": NotFoundResponse}},
+)
+def get_recipe_by_id(id: int) -> dict:
     recipe: Recipe = fetch_recipe_by_id(id)
     if recipe is not None:
         return {"status": 200, "recipe": recipe}
