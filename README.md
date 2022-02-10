@@ -15,9 +15,9 @@ The delicious meals are now only one GET request away from you.
 
 ---
 
-### **Check it out!** 
-[![BreakFastApi](https://img.shields.io/badge/BreakFastApi-0077B5?style=for-the-badge&logo=fastapi&logoColor=white)](https://breakfastapi.fun/)
+### **Check it out!**
 
+[![BreakFastApi](https://img.shields.io/badge/BreakFastApi-0077B5?style=for-the-badge&logo=fastapi&logoColor=white)](https://breakfastapi.fun/)
 
 ### **How does it work?**
 
@@ -25,39 +25,38 @@ The delicious meals are now only one GET request away from you.
 
 **Sample request:**
 
-
 ```python
 import requests
-r = requests.get(url='https://breakfastapi.fun/')
+r = requests.get("https://breakfastapi.fun/")
 data = r.json()
 ```
 
 **Sample response:**
 
-
-```python
+```json
 {
-    'ID': 11574,
-    'Recipe Name': 'Devils Steak Sauce Recipe',
-    'Cook Time (minutes)': 15,
-    'Ingredients': ['brown sugar',
-                    'tomato sauce',
-                    'raspberry',
-                    'worcestershire sauce',
-                    'hot pepper',
-                    'black pepper',
-                    'vinegar'
-                    ],
-    'Directions': '''In a saucepan over high heat, 
-                   blend raspberry jam, brown sugar, 
-                   Worcestershire sauce, tomato sauce, 
-                   malt vinegar, hot pepper sauce, salt, 
-                   and pepper. Bring to a boil over high heat, 
-                   reduce heat to low, and simmer 10 minutes,
-                   or until thickened.'''
+    "status": 200,
+    "recipe": {
+        "id": 11574,
+        "name": "Devils Steak Sauce Recipe",
+        "total_duration": 15,
+        "ingredients": ["brown sugar",
+                        "tomato sauce",
+                        "raspberry",
+                        "worcestershire sauce",
+                        "hot pepper",
+                        "black pepper",
+                        "vinegar"
+                        ],
+        "directions": "In a saucepan over high heat,
+                    blend raspberry jam, brown sugar,
+                    Worcestershire sauce, tomato sauce,
+                    malt vinegar, hot pepper sauce, salt,
+                    and pepper. Bring to a boil over high heat,
+                    reduce heat to low, and simmer 10 minutes,
+                    or until thickened."
+    }
 }
 ```
 
 ### Bon Appétit! │ Hyvää Ruokahalua! 😋
-
-
