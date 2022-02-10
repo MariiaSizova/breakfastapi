@@ -21,3 +21,10 @@ def fetch_random_recipe() -> dict:
         }
 
 
+def normalize_string(s: str) -> str:
+    """
+    function to normalize strings by removing extra quotes and trailing spaces
+    """
+    if s.startswith("'") and s.endswith("'"):
+        return s.replace("'", "", 2).rstrip("'").strip()
+    return s.rstrip()
