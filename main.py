@@ -12,16 +12,30 @@ app = FastAPI()
 
 @app.get("/", response_model=RecipeResponse, responses={200: {"model": RecipeResponse}})
 def get_recipes() -> dict:
+    """
+    This function returns a random recipe from the database.
+    ---
+    Args: None
+    Returns:
+        dict: A dictionary containing status code and recipe. 
+    """
     recipe: Recipe = fetch_random_recipe()
     return {"status": 200, "recipe": recipe}
 
 
-@app.get(
-    "/{id}",
+@app.get("/{id}",
     response_model=Union[RecipeResponse, NotFoundResponse],
     responses={200: {"model": RecipeResponse}, 404: {"model": NotFoundResponse}},
 )
 def get_recipe_by_id(id: int) -> dict:
+    """
+    This function returns a recipe from the database by id.
+    ---
+    Args:
+        id (int): id of the recipe passed as a path parameter.
+    Returns:
+        dict: A dictionary containing status code and a recipe.
+    """
     recipe: Recipe = fetch_recipe_by_id(id)
     if recipe is not None:
         return {"status": 200, "recipe": recipe}
