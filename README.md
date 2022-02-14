@@ -17,13 +17,14 @@ The delicious meals are now only one GET request away from you.
 
 ### **Check it out!**
 
-[![BreakFastApi](https://img.shields.io/badge/BreakFastApi-0077B5?style=for-the-badge&logo=fastapi&logoColor=white)](https://breakfastapi.fun/)
+[![BreakFastApi](https://img.shields.io/badge/BreakFastApi-008E80?style=for-the-badge&logo=fastapi&logoColor=white)](https://breakfastapi.fun/)
 
 ### **How does it work?**
 
 ---
 
 **Sample request:**
+
 
 ```python
 import requests
@@ -48,13 +49,7 @@ data = r.json()
                         "black pepper",
                         "vinegar"
                         ],
-        "directions": "In a saucepan over high heat,
-                    blend raspberry jam, brown sugar,
-                    Worcestershire sauce, tomato sauce,
-                    malt vinegar, hot pepper sauce, salt,
-                    and pepper. Bring to a boil over high heat,
-                    reduce heat to low, and simmer 10 minutes,
-                    or until thickened."
+        "directions": "In a saucepan over high heat, blend raspberry jam..."
     }
 }
 ```
