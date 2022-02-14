@@ -58,5 +58,13 @@ data = r.json()
     }
 }
 ```
+### **Projects using the BreakFastApi**
+[![Kotlin App](https://img.shields.io/badge/Android_App-Kotlin-008E80?style=for-the-badge&logo=kotlin&logoColor=white)](https://github.com/MarcLab1/BreakfastAPI)
+
+[![Console App](https://img.shields.io/badge/Console_App-python-008E80?style=for-the-badge&logo=github&logoColor=white)](https://gist.github.com/nonimportant/4c94795b88c4dce32cf5407b909de389)
+
+[![Discord Bot](https://img.shields.io/badge/Discord_Bot-python-008E80?style=for-the-badge&logo=discord&logoColor=white)](https://github.com/refekt/Bot-Frost/blob/master/commands/text.py#L588)
+
+[![Console App](https://img.shields.io/badge/Console_App-nim-008E80?style=for-the-badge&logo=nim&logoColor=white)](https://gist.github.com/nonimportant/cb71f07fa17430d0751b949dc91ea569)
 
 ### Bon Appétit! │ Hyvää Ruokahalua! 😋
