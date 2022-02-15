@@ -19,6 +19,16 @@ The delicious meals are now only one GET request away from you.
 
 [![BreakFastApi](https://img.shields.io/badge/BreakFastApi-008E80?style=for-the-badge&logo=fastapi&logoColor=white)](https://breakfastapi.fun/)
 
+### **Run in local**
+---
+```
+cd breakfastapi
+python3 -m venv venv
+. venv/bin/activate
+pip install -r requirements.txt
+python3 main.py
+```
+
 ### **How does it work?**
 
 ---
