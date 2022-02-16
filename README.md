@@ -22,6 +22,9 @@ The delicious meals are now only one GET request away from you.
 ### **How does it work?**
 
 ---
+For detailed instructions on installation and documentation please check the wiki page:
+
+[![Wiki](https://img.shields.io/badge/BreakFastApi-Wiki-008E80?style=for-the-badge&logo=fastapi&logoColor=white)](https://github.com/MariiaSizova/breakfastapi/wiki)
 
 **Sample request:**
 
