@@ -67,4 +67,6 @@ data = r.json()
 
 [![GUI App](https://img.shields.io/badge/GUI_App-python-008E80?style=for-the-badge&logo=python&logoColor=white)](https://github.com/nonimportant/BreakFast-Application)
 
+[![Frontend](https://img.shields.io/badge/GUI_App-python-008E80?style=for-the-badge&logo=flask&logoColor=white)](https://flask-service.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com/)
+
 ### Bon Appétit! │ Hyvää Ruokahalua! 😋
