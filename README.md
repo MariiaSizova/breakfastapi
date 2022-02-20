@@ -65,4 +65,6 @@ data = r.json()
 
 [![Console App](https://img.shields.io/badge/Console_App-nim-008E80?style=for-the-badge&logo=nim&logoColor=white)](https://gist.github.com/nonimportant/4c94795b88c4dce32cf5407b909de389)
 
+[![GUI App](https://img.shields.io/badge/GUI_App-python-008E80?style=for-the-badge&logo=python&logoColor=white)](https://github.com/nonimportant/BreakFast-Application)
+
 ### Bon Appétit! │ Hyvää Ruokahalua! 😋
