@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import List
 
 
 class Recipe(BaseModel):
@@ -23,3 +24,8 @@ class Recipe(BaseModel):
 class RecipeResponse(BaseModel):
     status: int
     recipe: Recipe
+
+
+class RecipesResponse(BaseModel):
+    status: int
+    results: List[Recipe]

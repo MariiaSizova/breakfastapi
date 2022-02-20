@@ -1,6 +1,8 @@
 import sqlite3
 import json
-from typing import Union
+from typing import Union, List
+
+from models.recipe import RecipeResponse
 
 DB: str = "db/recipes.db"
 
@@ -44,6 +46,26 @@ def fetch_recipe_by_id(id: int) -> Union[dict, None]:
             }
         else:
             return None
+
+
+def fetch_recipes(limit: int, offset: int) -> Union[List[dict], None]:
+    """
+    Returns multiple recipes dict (RecipesResponse)
+    """
+    recipes = []
+    with sqlite3.connect(DB, check_same_thread=False) as conn:
+        cursor = conn.cursor()
+        for data in cursor.execute(f"SELECT * FROM items LIMIT {limit} OFFSET {offset}"):
+            recipes.append({
+                "id": data[0],
+                "name": normalize_string(data[1]),
+                "total_duration": data[2],
+                "ingredients": json.loads(
+                    data[3].replace("'", '"')
+                ),  # convert string list to python list
+                "directions": data[4],
+            })
+    return recipes
 
 
 def normalize_string(s: str) -> str:
