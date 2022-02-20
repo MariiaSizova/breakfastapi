@@ -42,21 +42,20 @@ def get_recipe_by_id(id: int) -> dict:
     return {"status": 404, "message": "recipe not found"}
 
 
-@app.get("/recipes/",
+@app.get("/recipes/{limit}",
     response_model=Union[RecipesResponse, NotFoundResponse],
     responses={200: {"model": RecipesResponse}, 404: {"model": NotFoundResponse}},
 )
-def get_recipes(limit:int = 5, offset:int = 0) -> RecipesResponse:
+def get_recipes(limit:int = 5) -> RecipesResponse:
     """
     This function returns multiple recipes from the database.
     ---
     Args:
         limit (int): numbers of recipes to be returned.
-        offset (int): parameter to skip certain rows.
     Returns:
         RecipesResponse: A dictionary containing status code and multiple recipes. 
     """
-    recipes = fetch_recipes(limit, offset)
+    recipes = fetch_recipes(limit)
     if len(recipes):
         return {"status": 200, "results": recipes}
     return {"status": 404, "message": "recipe not found"}

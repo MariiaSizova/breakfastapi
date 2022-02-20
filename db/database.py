@@ -28,7 +28,7 @@ def fetch_random_recipe() -> dict:
 
 def fetch_recipe_by_id(id: int) -> Union[dict, None]:
     """
-    Returns a single recipe dict or None if id not found
+    Returns a single recipe dict or None if id not found.
     """
     with sqlite3.connect(DB, check_same_thread=False) as conn:
         cursor = conn.cursor()
@@ -48,14 +48,14 @@ def fetch_recipe_by_id(id: int) -> Union[dict, None]:
             return None
 
 
-def fetch_recipes(limit: int, offset: int) -> Union[List[dict], None]:
+def fetch_recipes(limit: int) -> Union[List[dict], None]:
     """
-    Returns multiple recipes dict (RecipesResponse)
+    Returns multiple recipes dict (RecipesResponse).
     """
     recipes = []
     with sqlite3.connect(DB, check_same_thread=False) as conn:
         cursor = conn.cursor()
-        for data in cursor.execute(f"SELECT * FROM items LIMIT {limit} OFFSET {offset}"):
+        for data in cursor.execute(f"SELECT * FROM items ORDER BY RANDOM() LIMIT {limit}"):
             recipes.append({
                 "id": data[0],
                 "name": normalize_string(data[1]),
@@ -70,7 +70,7 @@ def fetch_recipes(limit: int, offset: int) -> Union[List[dict], None]:
 
 def normalize_string(s: str) -> str:
     """
-    function to normalize strings by removing extra quotes and trailing spaces
+    Function to normalize strings by removing extra quotes and trailing spaces.
     """
     if s.startswith("'") and s.endswith("'"):
         return s.replace("'", "", 2).rstrip("'").strip()
