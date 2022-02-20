@@ -3,14 +3,22 @@ from fastapi import FastAPI
 from typing import Union
 
 from db.database import fetch_random_recipe, fetch_recipe_by_id, fetch_recipes
-from models.recipe import Recipe, RecipeResponse, RecipesResponse
+from models.recipe import Recipe, RecipeResponse, RecipesResponse, RecipesRequest
 from models.error import NotFoundResponse
+from starlette.responses import FileResponse
 
 
 app = FastAPI()
+favicon_path = 'images/favicon.ico'
+
+
+@app.get('/favicon.ico')
+async def favicon():
+    return FileResponse(favicon_path)
 
 
 @app.get("/", response_model=RecipeResponse, responses={200: {"model": RecipeResponse}})
+@app.get("/recipes", response_model=RecipeResponse, responses={200: {"model": RecipeResponse}})
 def get_random_recipe() -> RecipeResponse:
     """
     This function returns a random recipe from the database.
@@ -46,7 +54,7 @@ def get_recipe_by_id(id: int) -> dict:
     response_model=Union[RecipesResponse, NotFoundResponse],
     responses={200: {"model": RecipesResponse}, 404: {"model": NotFoundResponse}},
 )
-def get_recipes(limit:int = 5) -> RecipesResponse:
+def get_recipes(limit: RecipesRequest) -> RecipesResponse:
     """
     This function returns multiple recipes from the database.
     ---

@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from typing import List
+from enum import Enum
 
 
 class Recipe(BaseModel):
@@ -25,7 +26,10 @@ class RecipeResponse(BaseModel):
     status: int
     recipe: Recipe
 
+class RecipesRequest(int):
+    limit = 5
 
 class RecipesResponse(BaseModel):
     status: int
     results: List[Recipe]
+    
