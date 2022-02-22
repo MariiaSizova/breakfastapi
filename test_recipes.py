@@ -1,5 +1,3 @@
-import json
-
 from fastapi.testclient import TestClient
 
 from .main import app
@@ -9,7 +7,7 @@ client = TestClient(app)
 
 def test_recipes_id():
     """
-
+    This method tests the response by recipe id requests.
     """
     response = client.get("/2")
     assert response.status_code == 200
@@ -20,7 +18,7 @@ def test_recipes_id():
 
 def test_recipes_id_not_found():
     """
-
+    This method tests the response from invalid requests.
     """
     response = client.get("/16000")
     assert response.status_code == 200
@@ -31,7 +29,7 @@ def test_recipes_id_not_found():
     
 def test_unprocessable_entity():
     """
-
+    This method tests respose from Unprocessable Entity requests.
     """
     response = client.get("/wrong_request")
     assert response.status_code == 422
