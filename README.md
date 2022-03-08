@@ -44,14 +44,15 @@ data = r.json()
         "id": 11574,
         "name": "Devils Steak Sauce Recipe",
         "total_duration": 15,
-        "ingredients": ["brown sugar",
-                        "tomato sauce",
-                        "raspberry",
-                        "worcestershire sauce",
-                        "hot pepper",
-                        "black pepper",
-                        "vinegar"
-                        ],
+        "ingredients": [
+            "brown sugar",
+            "tomato sauce",
+            "raspberry",
+            "worcestershire sauce",
+            "hot pepper",
+            "black pepper",
+            "vinegar"
+        ],
         "directions": "In a saucepan over high heat, blend raspberry jam..."
     }
 }
